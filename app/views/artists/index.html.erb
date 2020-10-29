@@ -3,6 +3,6 @@
 <ul>
 <% @artists.each do |artist|%>
   <li>  <%= artist.name %></li>
-  <%= Song.all.select {|song| song.artist_id == artist.id}.count%> song
+  <%= artist.song_count%> song
 <% end%>
 </ul>
