@@ -1,8 +1,15 @@
 class ArtistsController < ApplicationController
   def index
+    @artists = Artist.all
+    # @artist = Artist.find(:id])
+    # @artist_songs = Song.all.select {|song| song.artist_id == artist.id}
+    # @artist_song_count = @artist_songs.count
+    # byebug
   end
 
   def show
+    @artist = Artist.find(params[:id])
+    @songs = Song.all.select {|song| song.artist_id == @artist.id}
   end
 
   def new
